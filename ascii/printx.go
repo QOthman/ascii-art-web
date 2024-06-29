@@ -23,34 +23,31 @@ func PrintX(s string, tabl2D [][]string, result *string) {
 				*result += tabl2D[s[j]-32][i]
 			}
 		}
-		*result += "\n"
+		*result += "<br>"
 	}
 }
 
 // var time int
 func Batata(fileName string, txt string) (result string, err bool) {
 	// passing File Argument, and getting the data to be processed
-
 	table, err := ReadFile(fileName)
 	if err {
 		return
 	}
-	text := strings.Split(txt, "\n")
+
+	text := strings.Split(txt, "\r\n") // "" "g"
 	// Convert Our File to 2D Table
 	tabl2D := AddingData(table)
 
-	for i, char := range text {
+	for _, char := range text {
 		if char == "" {
-			if i != 0 || !IsEmpty(text) {
-				result += "\n"
-			}
+			result += "<br>"
 		} else {
 			PrintX(char, tabl2D, &result)
 		}
 	}
 	return
 }
-
 // checking if the slice Empty or not
 func IsEmpty(tab []string) bool {
 	for _, char := range tab {
@@ -83,5 +80,3 @@ func ReadFile(fileName string) ([]string, bool) {
 	tab = strings.Split(string(v[1:]), "\n\n")
 	return tab, false
 }
-
-

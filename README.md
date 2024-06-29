@@ -69,8 +69,8 @@ This web App handled so far errors :
 
 ## Authors
 This Web App it's been programmed and Designed by : 
-- Zayd Zitan
 - Othman Qritel
+- Zayd Zitan
 - Mohamed Tawil
 
 ## Contributing

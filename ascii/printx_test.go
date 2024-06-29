@@ -2,7 +2,6 @@ package ascii_test
 
 import (
 	"testing"
-
 	"ascii/ascii"
 )
 
